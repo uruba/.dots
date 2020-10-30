@@ -7,7 +7,3 @@ udiskie -t &
 redshift-gtk &
 picom -b
 
-xinput set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 0
-
-#init_monitors
-# autorandr -c
