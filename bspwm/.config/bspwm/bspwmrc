@@ -5,8 +5,6 @@
 bspc monitor eDP -d I II III
 bspc monitor HDMI-A-0 -d IV V VI VII VIII XI
 
-polybar main &
-
 bspc config border_width        3
 bspc config window_gap          4
 
