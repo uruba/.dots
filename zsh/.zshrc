@@ -18,6 +18,8 @@ colors
 PROMPT="%{$fg_bold[cyan]%}%* %{$fg_bold[green]%}%d
 %{$fg_bold[yellow]%}%% %{$reset_color%}"
 
+bindkey '^R' history-incremental-search-backward
+
 source ~/.config/.env
 source ~/.config/.env.system
 source ~/.config/.aliases
