@@ -1,5 +1,7 @@
 #! /bin/sh
 
+disable_touchpad
+init_monitors
 
 #bspc monitor -d I II III IV V VI VII VIII IX X
 bspc monitor eDP -d I II III IV
@@ -17,6 +19,3 @@ bspc config remove_unplugged_monitors true
 bspc config merge_overlapping_monitors true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-
-disable_touchpad
-init_monitors
