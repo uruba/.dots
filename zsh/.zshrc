@@ -20,8 +20,3 @@ PROMPT="%{$fg_bold[cyan]%}%* %{$fg_bold[green]%}%d
 
 bindkey '^R' history-incremental-search-backward
 
-source ~/.config/.env
-source ~/.config/.env.system
-source ~/.config/.aliases
-
-
