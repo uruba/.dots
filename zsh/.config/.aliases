@@ -1,0 +1,10 @@
+alias ls="ls -alh"
+
+# trash-cli
+alias rm="trash-put"
+alias tl="trash-list"
+
+# Vagrant
+alias vu="vagrant up"
+alias vs="vagrant ssh"
+alias vus="vagrant up && vagrant ssh"
