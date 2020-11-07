@@ -1,9 +1,9 @@
 #! /bin/sh
 
 
-# bspc monitor -d I II III IV V VI VII VIII IX X
-bspc monitor eDP -d I II III
-bspc monitor HDMI-A-0 -d IV V VI VII VIII XI
+#bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor eDP -d I II III IV
+bspc monitor HDMI-A-0 -d V VI VII VIII XI
 
 bspc config border_width        3
 bspc config window_gap          4
