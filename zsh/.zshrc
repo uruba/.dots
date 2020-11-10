@@ -7,7 +7,7 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/uruba/.zshrc'
+zstyle :compinstall filename '${HOME}/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -18,5 +18,4 @@ colors
 PROMPT="%{$fg_bold[cyan]%}%* %{$fg_bold[green]%}%d
 %{$fg_bold[yellow]%}%% %{$reset_color%}"
 
-bindkey '^R' history-incremental-search-backward
-
+source $HOME/.config/zsh/key-bindings.zsh
