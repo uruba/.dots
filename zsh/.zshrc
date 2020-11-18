@@ -15,7 +15,12 @@ compinit
 
 autoload -U colors
 colors
-PROMPT="%{$fg_bold[cyan]%}%* %{$fg_bold[green]%}%d
-%{$fg_bold[yellow]%}%% %{$reset_color%}"
+#PROMPT="%{$fg_bold[cyan]%}%* %{$fg_bold[green]%}%d
+#%{$fg_bold[yellow]%}%% %{$reset_color%}"
 
 source $HOME/.config/zsh/key-bindings.zsh
+
+bindkey "^[[H"  beginning-of-line
+bindkey "^[[4~" end-of-line
+bindkey "^[[4h" overwrite-mode
+bindkey "^[[P"  delete-char
