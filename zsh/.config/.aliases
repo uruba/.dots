@@ -1,4 +1,6 @@
+alias sx="startx"
 alias ls="ls -alh"
+alias n="nnn"
 
 # trash-cli
 alias rm="trash-put"
