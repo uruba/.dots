@@ -1,9 +1,10 @@
 #! /bin/sh
 
-sxhkd &
 nm-applet &
 pasystray &
 udiskie -t &
 redshift-gtk &
 picom -b
+
+disable_touchpad
 
