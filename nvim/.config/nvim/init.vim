@@ -24,3 +24,8 @@ set laststatus=2
 " Line numbers
 set number
 set relativenumber
+
+" Undo
+set undofile
+set undodir=~/.vim/undo
+set undolevels=1024
