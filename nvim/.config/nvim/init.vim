@@ -1,8 +1,19 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 
+" Themes, visual elements
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'itchyny/lightline.vim'
+
+" Symlink
+Plug 'aymericbeaumet/vim-symlink'
+
+" Code completion
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
+" Git
+Plug 'tpope/vim-fugitive', { 'tag': 'v3.2' }
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
