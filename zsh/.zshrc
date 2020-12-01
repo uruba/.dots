@@ -13,6 +13,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+path+=("${HOME}/scripts")
+path+=("${HOME}/.local/bin")
+export PATH
+
 autoload -U colors
 colors
 PROMPT="%{$fg_bold[cyan]%}%* %{$fg_bold[green]%}%d
