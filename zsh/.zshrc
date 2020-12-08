@@ -19,7 +19,7 @@ export PATH
 
 autoload -U colors
 colors
-PROMPT="%{$fg_bold[cyan]%}%* %{$fg_bold[green]%}%d
+PROMPT="%{$fg_bold[yellow]%}%* %{$fg_bold[cyan]%}%d %(?.$fg_bold[green]✓.$fg_bold[red]%?) 
 %{$fg_bold[yellow]%}%% %{$reset_color%}"
 
 source $HOME/.config/zsh/key-bindings.zsh
