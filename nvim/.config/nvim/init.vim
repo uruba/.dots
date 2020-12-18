@@ -21,6 +21,7 @@ Plug 'airblade/vim-gitgutter'
 
 " NERDTree
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
@@ -55,6 +56,12 @@ set nowritebackup
 
 " updatetime
 set updatetime=450
+
+" NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+map <C-n> :NERDTreeToggle<CR>
 
 " Code completion
 set hidden
