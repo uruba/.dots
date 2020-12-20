@@ -29,6 +29,9 @@ syntax on
 
 colorscheme dracula
 
+" Mouse
+set mouse=a
+
 " Indentation
 filetype plugin indent on
 set expandtab
