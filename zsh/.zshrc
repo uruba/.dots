@@ -28,3 +28,13 @@ bindkey "^[[H"  beginning-of-line
 bindkey "^[[4~" end-of-line
 bindkey "^[[4h" overwrite-mode
 bindkey "^[[P"  delete-char
+
+# save path on cd (chpwd is a zsh hook)
+function chpwd {
+  pwd > ~/.last_dir
+}
+
+# restore last saved path on launch
+if [[ -f ~/.last_dir ]]; then
+  cd $(cat ~/.last_dir)
+fi
