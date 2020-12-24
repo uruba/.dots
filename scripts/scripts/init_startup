@@ -1,5 +1,6 @@
 #! /bin/sh
 
+numlockx &
 nm-applet &
 pasystray &
 udiskie -t &
