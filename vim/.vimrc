@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Themes, visual elements
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'itchyny/lightline.vim'
 
 " Symlink
@@ -27,7 +27,7 @@ call plug#end()
 
 syntax on
 
-colorscheme dracula
+colorscheme purify
 
 " Mouse
 set mouse=a
