@@ -20,7 +20,7 @@ export PATH
 autoload -U colors
 colors
 PROMPT="%{$fg_bold[yellow]%}%* %{$fg_bold[cyan]%}%d %(?.$fg_bold[green]✓.$fg_bold[red]%?) 
-%{$fg_bold[yellow]%}%% %{$reset_color%}"
+%(3L.$fg_bold[red]%L .)%{$fg_bold[yellow]%}%% %{$reset_color%}"
 
 source $HOME/.config/zsh/key-bindings.zsh
 
@@ -29,10 +29,14 @@ bindkey "^[[4~" end-of-line
 bindkey "^[[4h" overwrite-mode
 bindkey "^[[P"  delete-char
 
-# save path on cd (chpwd is a zsh hook)
+# save path on cd (chpwd is a zsh hook) and spawned subshell
 function chpwd {
   pwd > ~/.last_dir
 }
+
+if [[ $SHLVL -ge 3 ]]; then
+  chpwd
+fi
 
 # restore last saved path on launch
 if [[ -f ~/.last_dir ]]; then
