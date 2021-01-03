@@ -5,6 +5,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'itchyny/lightline.vim'
 
+" Color highlight
+Plug 'ap/vim-css-color'
+
 " Symlink
 Plug 'aymericbeaumet/vim-symlink'
 
