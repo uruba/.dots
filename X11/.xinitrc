@@ -6,6 +6,8 @@ autorandr -c
 xset -dpms
 xset s off
 
+~/.fehbg
+
 while true; do
     dwm 2> ~/.dwm.log
 done
