@@ -5,6 +5,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'itchyny/lightline.vim'
 
+" Syntax
+Plug 'sheerun/vim-polyglot'
+
 " Color highlight
 Plug 'ap/vim-css-color'
 
@@ -31,6 +34,8 @@ call plug#end()
 syntax on
 
 colorscheme purify
+
+set nocompatible
 
 " Mouse
 set mouse=a
