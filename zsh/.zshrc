@@ -13,14 +13,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-path+=("${HOME}/scripts")
-path+=("${HOME}/.local/bin")
-export PATH
-
 autoload -U colors
 colors
-PROMPT="%{%B%F{214}%}%* %{$fg_bold[cyan]%}%d %(?.$fg_bold[green]✓.$fg_bold[red]%?) 
-%(3L.$fg_bold[red]%L .)%{%B%F{214}%}%% %{$reset_color%}"
+PROMPT="%{$fg_bold[yellow]%}%* %{$fg_bold[cyan]%}%d %(?.$fg_bold[green]✓.$fg_bold[red]%?) 
+%(3L.$fg_bold[red]%L .)%{$fg_bold[yellow]%}%%%{$reset_color%} "
 
 source $HOME/.config/zsh/key-bindings.zsh
 
