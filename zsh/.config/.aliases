@@ -1,5 +1,5 @@
 alias sx="startx"
-alias ls="ls -alh"
+alias lss="ls -alh"
 alias n="nnn"
 
 # trash-cli
