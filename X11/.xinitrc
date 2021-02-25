@@ -6,6 +6,8 @@ autorandr -c
 xset -dpms
 xset s off
 
+xrdb -merge ~/.Xresources
+
 ~/.fehbg
 
 while true; do
