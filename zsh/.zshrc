@@ -18,6 +18,10 @@ colors
 PROMPT="%{$fg_bold[yellow]%}%* %{$fg_bold[cyan]%}%d %(?.$fg_bold[green]✓.$fg_bold[red]%?) 
 %(3L.$fg_bold[red]%L .)%{$fg_bold[yellow]%}%%%{$reset_color%} "
 
+source ~/.config/.env
+source ~/.config/.env.system
+source ~/.config/.aliases
+
 source $HOME/.config/zsh/key-bindings.zsh
 
 bindkey "^[[H"  beginning-of-line
