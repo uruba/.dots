@@ -18,6 +18,12 @@ Plug 'aymericbeaumet/vim-symlink'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
 
+" ALE
+Plug 'dense-analysis/ale'
+
+" Emmet
+Plug 'mattn/emmet-vim'
+
 " Debugging
 Plug 'puremourning/vimspector'
 
@@ -67,6 +73,12 @@ set nowritebackup
 
 " updatetime
 set updatetime=450
+
+" Debugging
+let g:vimspector_enable_mappings = 'HUMAN'
+
+" ALE
+let g:ale_disable_lsp = 1
 
 " Tabs
 nnoremap <C-Left> :tabprevious<CR>                                                                            
