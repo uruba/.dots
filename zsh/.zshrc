@@ -7,6 +7,12 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' menu select=long-list select=0
+zstyle ':completion:*' original true
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle :compinstall filename '${HOME}/.zshrc'
 
 autoload -Uz compinit
@@ -18,8 +24,6 @@ colors
 PROMPT="%{$fg_bold[yellow]%}%* %{$fg_bold[cyan]%}%d %(?.$fg_bold[green]✓.$fg_bold[red]%?) 
 %(3L.$fg_bold[red]%L .)%{$fg_bold[yellow]%}%%%{$reset_color%} "
 
-source ~/.config/.env
-source ~/.config/.env.system
 source ~/.config/.aliases
 
 source $HOME/.config/zsh/key-bindings.zsh
