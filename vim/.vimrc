@@ -48,6 +48,7 @@ set nocompatible
 
 " Mouse
 set mouse=a
+set ttymouse=sgr
 
 " Indentation
 filetype plugin indent on
