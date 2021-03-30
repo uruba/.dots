@@ -5,6 +5,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'itchyny/lightline.vim'
 
+" Distraction-free
+Plug 'junegunn/goyo.vim'
+
 " Syntax
 Plug 'sheerun/vim-polyglot'
 
@@ -57,6 +60,9 @@ set smartindent
 " Lightline
 set laststatus=2
 set cmdheight=2
+
+" Distraction-free
+nnoremap <leader>g :Goyo<CR>
 
 " Line numbers
 set number
