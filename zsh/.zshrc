@@ -25,6 +25,7 @@ PROMPT="%{$fg_bold[yellow]%}%* %{$fg_bold[cyan]%}%d %(?.$fg_bold[green]✓.$fg_b
 %(3L.$fg_bold[red]%L .)%{$fg_bold[yellow]%}%%%{$reset_color%} "
 
 source ~/.config/.aliases
+source ~/.config/.aliases.local
 
 source $HOME/.config/zsh/key-bindings.zsh
 
@@ -46,3 +47,7 @@ fi
 if [[ -f ~/.last_dir ]]; then
   cd $(cat ~/.last_dir)
 fi
+
+source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+eval `keychain --eval --quiet --agents ssh,gpg id_rsa`
