@@ -1,0 +1,26 @@
+#!/bin/sh
+
+case "$1" in
+    "in")
+        export message="Power cord plugged in"
+        governor="performance"
+        ;;
+    "out")
+        export message="Power cord unplugged"
+        governor="schedutil"
+        ;;
+    *)
+        echo "Wrong argument specified"
+        exit 1
+        ;;
+esac
+
+user=$(who | head -n 1 | cut -d" " -f1)
+
+
+export XAUTHORITY=/home/$user/.Xauthority
+export DISPLAY=:0
+
+su $user -c 'notify-send "$message"'
+cpupower frequency-set -r -g $governor
+
