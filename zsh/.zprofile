@@ -2,6 +2,7 @@ export XDG_DATA_DIRS="$HOME/.nix-profile/share:/usr/local/share/:/usr/share/"
 
 path+=("${HOME}/scripts")
 path+=("${HOME}/.local/bin")
+path+=("$(go env GOPATH)/bin")
 export PATH
 
 source ~/.config/.env
