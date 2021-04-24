@@ -46,9 +46,15 @@ colorscheme purify
 
 set nocompatible
 
+" .exrc
+set exrc
+set secure
+
 " Mouse
 set mouse=a
-set ttymouse=sgr
+if !has('nvim')
+    set ttymouse=sgr
+endif
 
 " Indentation
 filetype plugin indent on
@@ -57,6 +63,9 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
+
+" Search
+set hlsearch
 
 " Lightline
 set laststatus=2
