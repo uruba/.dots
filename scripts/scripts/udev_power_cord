@@ -15,7 +15,7 @@ case "$1" in
         ;;
 esac
 
-user=$(who | head -n 1 | cut -d" " -f1)
+user=$(users | cut -d" " -f1)
 
 
 export XAUTHORITY=/home/$user/.Xauthority
