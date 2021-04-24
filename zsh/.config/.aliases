@@ -2,6 +2,9 @@ alias sx="startx"
 alias lss="ls -alh"
 alias n="nnn"
 
+# vim
+alias v="nvim"
+
 # trash-cli
 alias rm="trash-put"
 alias tl="trash-list"
