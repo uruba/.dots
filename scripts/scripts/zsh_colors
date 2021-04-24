@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+for c in {0..7}; do 
+  b=$((c+8))
+  print -P - "%F{$c}$c%f -> %F{$b}$b%f"
+done
+
