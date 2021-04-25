@@ -21,13 +21,14 @@ compinit
 
 autoload -U colors
 colors
-PROMPT="%{$fg[yellow]%}%* %{$fg[blue]%}%d %(?.$fg[green]✓.$fg[red]%?) 
-%(3L.$fg[red]%L .)%{$fg[yellow]%}%%%{$reset_color%} "
+PROMPT="%{$fg_bold[yellow]%}%* %{$fg_bold[blue]%}%d %(?.$fg_bold[green]✓.$fg_bold[red]%?) 
+%(3L.$fg_bold[red]%L .)%(?.$fg_bold[green].$fg_bold[red])%%%{$reset_color%} "
 
-source ~/.config/.aliases
-source ~/.config/.aliases.local
+source $HOME/.config/.aliases
+source $HOME/.config/.aliases.local
 
 source $HOME/.config/zsh/key-bindings.zsh
+source $HOME/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 bindkey "^[[H"  beginning-of-line
 bindkey "^[[4~" end-of-line
@@ -47,7 +48,5 @@ fi
 if [[ -f ~/.last_dir ]]; then
   cd $(cat ~/.last_dir)
 fi
-
-source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 eval `keychain --eval --quiet --agents ssh,gpg id_rsa`
