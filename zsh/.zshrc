@@ -29,6 +29,7 @@ source $HOME/.config/.aliases.local
 
 source $HOME/.config/zsh/key-bindings.zsh
 source $HOME/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 bindkey "^[[H"  beginning-of-line
 bindkey "^[[4~" end-of-line
