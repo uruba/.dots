@@ -1,0 +1,9 @@
+#!/bin/sh
+
+user=$(users | cut -d" " -f1)
+export XAUTHORITY=/home/$user/.Xauthority
+export DISPLAY=:0
+
+export brightness=$(light)
+echo $brightness
+su $user -c 'notify-send "$brightness" -h int:value:$brightness -h string:x-canonical-private-synchronous:brightness'
