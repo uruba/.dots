@@ -22,7 +22,7 @@ compinit
 autoload -U colors
 colors
 PROMPT="%{$fg_bold[yellow]%}%* %{$fg_bold[blue]%}%d %(?.$fg_bold[green]✓.$fg_bold[red]%?) 
-%(3L.$fg_bold[red]%L .)%(?.$fg_bold[green].$fg_bold[red])%%%{$reset_color%} "
+%(3L.$fg_bold[red]%L .)%{%(?.$fg_bold[green].$fg_bold[red])%}%%%{$reset_color%} "
 
 source $HOME/.config/.aliases
 source $HOME/.config/.aliases.local
