@@ -1,6 +1,5 @@
 alias sx="startx"
 alias lss="ls -alh"
-alias n="nnn"
 
 # vim
 alias v="nvim"

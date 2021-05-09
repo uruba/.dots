@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# Description: Start an interactive zsh shell.
+
+export nnn="$1"
+
+zsh -i
