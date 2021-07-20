@@ -1,15 +1,25 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 
-" Themes, visual elements
+" Startify
+Plug 'mhinz/vim-startify'
+
+" Theme
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+
+" Surround
+Plug 'tpope/vim-surround'
+
+" Lightline
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 
 " Distraction-free
 Plug 'junegunn/goyo.vim'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
+Plug 'kevinoid/vim-jsonc'
 
 " Color highlight
 Plug 'ap/vim-css-color'
@@ -19,7 +29,7 @@ Plug 'aymericbeaumet/vim-symlink'
 
 " Code completion
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
+Plug 'phpactor/phpactor', { 'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o' }
 
 " ALE
 Plug 'dense-analysis/ale'
@@ -34,9 +44,26 @@ Plug 'puremourning/vimspector'
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.2' }
 Plug 'airblade/vim-gitgutter'
 
+" Obsession
+Plug 'tpope/vim-obsession'
+
 " NERDTree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" VimDevIcons
+Plug 'ryanoasis/vim-devicons'
+
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" FZF
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
+" Bufonly
+Plug 'schickling/vim-bufonly'
 
 call plug#end()
 
@@ -56,6 +83,10 @@ if !has('nvim')
     set ttymouse=sgr
 endif
 
+" .vimrc
+nnoremap <M-e> :e ~/.vimrc<CR>
+nnoremap <M-r> :so ~/.vimrc<CR>
+
 " Indentation
 filetype plugin indent on
 set expandtab
@@ -67,9 +98,51 @@ set smartindent
 " Search
 set hlsearch
 
+" FZF
+nnoremap <leader>fa :Ag<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fc :Commands<CR>
+nnoremap <leader>fg :GitFiles<CR>
+nnoremap <leader>fhc :History:<CR>
+nnoremap <leader>fhs :History/<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fr :Rg<CR>
+nnoremap <leader>fm :Maps<CR>
+
 " Lightline
 set laststatus=2
 set cmdheight=2
+set showtabline=2
+
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ],
+	\             [ 'cocstatus', 'readonly', 'filename', 'modified', 'gitbranch'] ]
+	\ },
+    \ 'tabline': {
+    \   'left': [ ['buffers'] ]
+    \ },
+    \ 'component_expand': {
+    \   'buffers': 'lightline#bufferline#buffers'
+    \ },
+	\ 'component_function': {
+	\   'cocstatus': 'coc#status',
+    \   'gitbranch': 'FugitiveHead'
+	\ },
+    \ 'component_type': {
+    \   'buffers': 'tabsel'
+    \ }
+	\ }
+
+let g:lightline#bufferline#show_number = 1
+let g:lightline#bufferline#enable_devicons = 1
+let g:lightline#bufferline#clickable = 1024
+let g:lightline.component_raw = {'buffers': 1}
+
+" Buffers
+nnoremap <leader>b :ls<CR>:b<Space>
+nnoremap <leader>cb :BufOnly<CR>
 
 " Distraction-free
 nnoremap <leader>g :Goyo<CR>
@@ -90,11 +163,14 @@ set nowritebackup
 " updatetime
 set updatetime=450
 
-" Debugging
-let g:vimspector_enable_mappings = 'HUMAN'
-
 " ALE
 let g:ale_disable_lsp = 1
+
+" Debugging
+let g:vimspector_enable_mappings = 'HUMAN'
+nmap <Leader>di <Plug>VimspectorBalloonEval
+xmap <Leader>di <Plug>VimspectorBalloonEval
+nmap <Leader>dr :VimspectorReset<CR>
 
 " Tabs
 nnoremap <C-Left> :tabprevious<CR>                                                                            
@@ -103,16 +179,18 @@ nnoremap <C-j> :tabprevious<CR>
 nnoremap <C-k> :tabnext<CR>
 
 " Clipboard
-vmap <C-C> "+y
-nmap <C-V> "+gP
+vmap <Leader-C> "+y
 
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-map <C-n> :NERDTreeToggle<CR>
+let g:NERTreeChDirMode = 2
 
+map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-m> :NERDTreeFind<CR>
+ 
 " Code completion
 set hidden
 set shortmess+=c
@@ -208,3 +286,34 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
