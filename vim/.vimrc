@@ -122,7 +122,6 @@ let g:startify_lists = [
           \ { 'type': 'commands',  'header': ['   Commands']       },
           \ ]
 
-
 " Lightline
 set laststatus=2
 set cmdheight=2
