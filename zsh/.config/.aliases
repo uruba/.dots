@@ -13,6 +13,12 @@ alias vu="vagrant up"
 alias vs="vagrant ssh"
 alias vus="vagrant up && vagrant ssh"
 
+# nnn
+alias n="n -T t"
+
+# tmux
+alias t="tmux"
+
 function mkcd {
     mkdir -p "$1" && cd $_
 }
