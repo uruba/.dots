@@ -75,6 +75,8 @@ bindkey "^[b"       backward-word       # Alt + b
 bindkey "^[f"       forward-word        # Alt + f
 bindkey "^A"        beginning-of-line   # Ctrl + a
 bindkey "^E"        end-of-line         # Ctrl + e
+bindkey "^K"        kill-line           # Ctrl + k
+bindkey "^U"        backward-kill-line  # Ctrl + u
 
 # save path on cd (chpwd is a zsh hook) and spawned subshell
 function chpwd {

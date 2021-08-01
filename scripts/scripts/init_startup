@@ -2,11 +2,10 @@
 
 numlockx &
 nm-applet &
-volctl &
+pasystray &
 udiskie -t &
 redshift-gtk &
-alttab -d 1 -w 1 -bg "#0a4158" -fg "#ff9636" -frame "#ff9636" &
-picom -b
+alttab -d 1 -w 1 -bg "#50514f" -fg "#b4adea" -frame "#b4adea" &
 
 disable_touchpad
 
