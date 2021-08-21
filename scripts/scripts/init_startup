@@ -2,6 +2,7 @@
 
 numlockx &
 nm-applet &
+blueman-applet &
 pasystray &
 udiskie -t &
 redshift-gtk &
