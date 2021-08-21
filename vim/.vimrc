@@ -65,6 +65,9 @@ Plug 'junegunn/fzf.vim'
 " Bufonly
 Plug 'schickling/vim-bufonly'
 
+" Lastplace
+Plug 'farmergreg/vim-lastplace'
+
 call plug#end()
 
 syntax on
