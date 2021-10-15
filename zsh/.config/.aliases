@@ -19,6 +19,9 @@ alias n="n -T t"
 # tmux
 alias t="tmux"
 
+# Watson
+alias wa="watson"
+
 function mkcd {
     mkdir -p "$1" && cd $_
 }
