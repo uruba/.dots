@@ -6,6 +6,7 @@ Plug 'mhinz/vim-startify'
 
 " Theme
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'joshdick/onedark.vim'
 
 " Surround
 Plug 'tpope/vim-surround'
@@ -29,7 +30,7 @@ Plug 'aymericbeaumet/vim-symlink'
 
 " Code completion
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'phpactor/phpactor', { 'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o' }
+"Plug 'phpactor/phpactor', { 'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o' }
 
 " ALE
 Plug 'dense-analysis/ale'
@@ -41,7 +42,7 @@ Plug 'mattn/emmet-vim'
 Plug 'puremourning/vimspector'
 
 " Git
-Plug 'tpope/vim-fugitive', { 'tag': 'v3.2' }
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Obsession
@@ -72,7 +73,7 @@ call plug#end()
 
 syntax on
 
-colorscheme purify
+colorscheme onedark
 
 set nocompatible
 
