@@ -1,5 +1,6 @@
 #! /bin/sh
 
+picom &
 numlockx &
 nm-applet &
 blueman-applet &
