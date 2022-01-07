@@ -4,8 +4,12 @@ alias lss="ls -alh"
 # vim
 alias v="nvim"
 
+# file manipulation
+alias cp="cp -iv"
+alias mv="mv -iv"
+
 # trash-cli
-alias rm="trash-put"
+alias rm="trash-put -v"
 alias tl="trash-list"
 
 # Vagrant
@@ -23,5 +27,5 @@ alias t="tmux"
 alias wa="watson"
 
 function mkcd {
-    mkdir -p "$1" && cd $_
+    mkdir -p -- "$1" && cd $_
 }
