@@ -19,6 +19,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+REPORTTIME=5
+
 autoload -U colors
 colors
 PROMPT="%{$fg_bold[yellow]%}%* %{$fg_bold[blue]%}%d %(?.$fg_bold[green]✓.$fg_bold[red]%?) 
