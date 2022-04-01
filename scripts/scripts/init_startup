@@ -5,9 +5,10 @@ numlockx &
 nm-applet &
 blueman-applet &
 pasystray &
-udiskie -t &
 redshift-gtk &
 alttab -d 1 -w 1 -bg "#50514f" -fg "#b4adea" -frame "#b4adea" &
+
+setxkbmap -layout "us,cz(qwerty)" -option grp:shifts_toggle
 
 disable_touchpad
 
