@@ -26,8 +26,11 @@ alias t="tmux"
 # Watson
 alias wa="watson"
 
-#grep
+# grep
 alias gr="grep --color=auto"
+
+# dirs
+alias dv="dirs -v"
 
 function mkcd {
     mkdir -p -- "$1" && cd $_
