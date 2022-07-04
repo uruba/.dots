@@ -33,6 +33,11 @@ source $HOME/.config/zsh/key-bindings.zsh
 source $HOME/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
+# tmux
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    tmux || tmux >/dev/null 2>&1
+fi
+
 # key bindings according to https://wiki.archlinux.org/title/Zsh#Key_bindings
 typeset -g -A key
 
