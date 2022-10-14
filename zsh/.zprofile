@@ -3,6 +3,8 @@ path+=("${HOME}/.local/bin")
 path+=("$(go env GOPATH)/bin")
 export PATH
 
+export GPG_TTY=$(tty)
+
 source ~/.config/.env
 # source system specific environment variables
 if [[ -f ~/.config/.system.env ]]; then
@@ -13,4 +15,4 @@ if [[ -f ~/.config/.nnn.env ]]; then
     source ~/.config/.nnn.env
 fi
 
-source "$HOME/.cargo/env"
+#source "$HOME/.cargo/env"
