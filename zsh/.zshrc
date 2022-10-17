@@ -34,7 +34,7 @@ source $HOME/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighti
 source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 # tmux
-if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ] && [ -z "${NOTMUX}" ]; then
     tmux || tmux >/dev/null 2>&1
 fi
 
