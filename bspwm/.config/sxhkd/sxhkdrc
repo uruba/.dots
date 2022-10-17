@@ -8,11 +8,19 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show drun
+    rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/shades/scripts/rofi/launcher.rasi
+
+# screen locker
+super + l
+    slock
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# quake-style terminal
+super + d
+    tdrop -ma -w 98% -x 1% -y 30 -s quake st 
 
 #
 # bspwm hotkeys
@@ -49,9 +57,6 @@ super + {t,shift + t,s,f}
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
-
-#
-# focus/swap
 #
 
 # focus the node in the given direction
