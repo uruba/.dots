@@ -26,6 +26,9 @@ require('packer').startup(function(use)
      -- Sensible defaults
     use 'tpope/vim-sensible'
 
+    -- Plenary
+    use 'nvim-lua/plenary.nvim'
+
     -- File explorer
     use 'kyazdani42/nvim-tree.lua'
 
@@ -39,8 +42,15 @@ require('packer').startup(function(use)
     use 'aymericbeaumet/vim-symlink'
 
     -- Git
-    use 'tpope/vim-fugitive'
-    use 'airblade/vim-gitgutter'
+    --use 'tpope/vim-fugitive'
+    --use 'airblade/vim-gitgutter'
+    use 'kdheepak/lazygit.nvim'
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
 
     -- Lastplace
     use 'farmergreg/vim-lastplace'
@@ -70,8 +80,8 @@ require('packer').startup(function(use)
     use 'tpope/vim-surround'
 
     -- LSP
-    use 'neovim/nvim-lspconfig'
-    use 'glepnir/lspsaga.nvim'
+    --use 'neovim/nvim-lspconfig'
+    --use 'glepnir/lspsaga.nvim'
 
     -- Autocomplete
     use {
@@ -91,13 +101,10 @@ require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons' },
     }
 
-    -- git labels
+    -- Tabline bar
     use {
-        'lewis6991/gitsigns.nvim',
-        requires = { 'nvim-lua/plenary.nvim' },
-        config = function()
-            require('gitsigns').setup()
-        end
+        'romgrk/barbar.nvim',
+        requires = {'kyazdani42/nvim-web-devicons'}
     }
 
     -- Dashboard (start screen)

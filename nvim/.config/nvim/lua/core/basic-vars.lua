@@ -6,3 +6,7 @@ vim.o.expandtab = true
 vim.o.mouse = a
 vim.o.number = true
 vim.o.relativenumber = true
+
+vim.o.undofile = true
+vim.o.undodir = "~/.vim/undo"
+vim.o.undolevels = 1024
