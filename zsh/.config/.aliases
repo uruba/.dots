@@ -17,6 +17,10 @@ alias vu="vagrant up"
 alias vs="vagrant ssh"
 alias vus="vagrant up && vagrant ssh"
 
+# Docker Compose
+alias dcb="docker compose build"
+alias dcu="docker compose up"
+
 # nnn
 alias n="n -T t"
 
