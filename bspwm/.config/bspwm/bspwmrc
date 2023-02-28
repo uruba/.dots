@@ -24,3 +24,5 @@ bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Zathura state=tiled
 
 ~/.config/polybar/launch.sh --shades &
+
+xsetroot -cursor_name left_ptr
