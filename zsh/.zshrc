@@ -21,10 +21,10 @@ compinit
 
 REPORTTIME=5
 
-autoload -U colors
-colors
-PROMPT="%{$fg_bold[yellow]%}%* %{$fg_bold[blue]%}%d %(?.$fg_bold[green]✓.$fg_bold[red]%?) 
-%{%(3L.$fg_bold[red]%L .)%}%{%(?.$fg_bold[green].$fg_bold[red])%}%%%{$reset_color%} "
+#autoload -U colors
+#colors
+PROMPT="%B%F{yellow}%*%f %F{blue}%d%f %(?.%F{green}✓%f.%F{red}%?%f)
+%(3L.%F{red}%L%f .)%(?.%F{green}.%F{red})%%%f%b "
 
 source $HOME/.config/.aliases
 source $HOME/.config/.aliases.local
