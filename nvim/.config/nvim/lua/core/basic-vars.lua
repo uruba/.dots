@@ -10,3 +10,5 @@ vim.o.relativenumber = true
 vim.o.undofile = true
 vim.o.undodir = vim.fn.expand('~/.vim/undo')
 vim.o.undolevels = 1024
+
+vim.g.mapleader = " "
