@@ -21,8 +21,6 @@ compinit
 
 REPORTTIME=5
 
-#autoload -U colors
-#colors
 PROMPT="%B%F{yellow}%*%f %F{blue}%d%f %(?.%F{green}✓%f.%F{red}%?%f)
 %(3L.%F{red}%L%f .)%(?.%F{green}.%F{red})%%%f%b "
 
